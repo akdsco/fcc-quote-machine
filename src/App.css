@@ -1,3 +1,95 @@
-.App {
+.flex {
+  display: flex;
+}
 
+.App {
+  background-color: coral;
+  color: coral;
+  height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#quote-box {
+  padding: 1em 2em;
+  background-color: azure;
+  border-radius: 5px;
+}
+
+#text {
+  text-align: center;
+  max-width: 550px;
+  min-width: 256px;
+}
+
+.quote-icon {
+  margin-right: 10px;
+}
+
+#author {
+  text-align: right;
+}
+
+.social-share-btn {
+  background-color: coral;
+  border-radius: 2px;
+  width: 38px;
+  height: 38px;
+  margin-right: 7px;
+
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: center;
+  align-items: center;
+
+  transition: background 250ms ease-in-out, transform 150ms ease;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+.new-quote-btn {
+  display: inline-block;
+  border: none;
+  padding: .5rem 1rem;
+  margin: 0;
+  text-decoration: none;
+  background: coral;
+  color: #ffffff;
+  border-radius: 2px;
+  font-family: sans-serif;
+  font-size: 1rem;
+  line-height: 1;
+  cursor: pointer;
+  text-align: center;
+  transition: background 250ms ease-in-out, transform 150ms ease;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+.new-quote-btn:hover,
+.new-quote-btn:focus,
+.social-share-btn:hover,
+.social-share-btn:focus {
+  background-color: rgba(255, 131, 86, 0.78);
+}
+
+.new-quote-btn:focus,
+.social-share-btn:focus {
+  outline: 1px solid #fff;
+  outline-offset: -4px;
+}
+
+.new-quote-btn:active,
+.social-share-btn:active {
+  transform: scale(0.99);
+}
+
+.control-panel {
+  justify-content: space-between;
+}
+
+.social-icon {
+  color: white;
 }
