@@ -1,10 +1,10 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Slab:400,700&display=swap');
+
 .flex {
   display: flex;
 }
 
 .App {
-  background-color: coral;
-  color: coral;
   height: 100vh;
 
   display: flex;
@@ -20,6 +20,7 @@
 
 #text {
   text-align: center;
+  font-family: 'Roboto Slab', sans-serif;
   max-width: 550px;
   min-width: 256px;
 }
@@ -30,10 +31,10 @@
 
 #author {
   text-align: right;
+  font-family: 'Roboto Slab', sans-serif;
 }
 
 .social-share-btn {
-  background-color: coral;
   border-radius: 2px;
   width: 38px;
   height: 38px;
@@ -55,11 +56,10 @@
   padding: .5rem 1rem;
   margin: 0;
   text-decoration: none;
-  background: coral;
   color: #ffffff;
   border-radius: 2px;
-  font-family: sans-serif;
   font-size: 1rem;
+  font-family: 'Roboto Slab', sans-serif;
   line-height: 1;
   cursor: pointer;
   text-align: center;
@@ -72,7 +72,7 @@
 .new-quote-btn:focus,
 .social-share-btn:hover,
 .social-share-btn:focus {
-  background-color: rgba(255, 131, 86, 0.78);
+  opacity: .7;
 }
 
 .new-quote-btn:focus,
@@ -92,4 +92,64 @@
 
 .social-icon {
   color: white;
+}
+
+.credits {
+  color: white;
+  font-size: 12px;
+  letter-spacing: 1.2px;
+}
+
+.credits a {
+  font-weight: 700;
+  color: white;
+}
+
+.category-group {
+  margin-bottom: 7px;
+}
+
+.category-button {
+  margin-right: 10px;
+  color: white;
+  text-decoration: none;
+  background: none;
+  border: none;
+  border-radius: 5px;
+  /*border-bottom: 3px solid grey;*/
+  /*optional*/
+  font-family: 'Roboto Slab', sans-serif;
+  /*input has OS specific font-family*/
+  cursor: pointer;
+}
+
+/*.category-button:focus {*/
+/*  outline: none;*/
+/*  border-radius: 5px;*/
+/*  border-bottom: 3px solid white;*/
+/*}*/
+
+.category-button:active {
+  border-radius: 5px;
+  border-bottom: 3px solid white;
+}
+
+.category-button:hover,
+.category-button:focus {
+  outline: none;
+  animation: categoryButton .8s forwards;
+}
+
+.selected-button {
+  cursor: initial;
+  font-weight: bold;
+  border-radius: 5px!important;
+  border-bottom: 3px solid white!important;
+}
+
+@keyframes categoryButton {
+  100% {
+    border-radius: 5px;
+    border-bottom: 3px solid white;
+  }
 }
