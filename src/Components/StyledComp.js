@@ -8,7 +8,7 @@ export const StyledDiv = styled.div`
   `;
 
 export const CategoryBtn = styled.button`
-    border-bottom: 3px solid ${props => props.theme.color.currentColor};
+    border-bottom: 3px solid transparent;
     animation: ${props => props.theme.borderKeyFrame} 2s forwards;
   `;
 

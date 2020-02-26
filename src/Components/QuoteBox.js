@@ -3,11 +3,11 @@ import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faTumblr, faTwitter} from "@fortawesome/free-brands-svg-icons";
 import {faQuoteLeft} from '@fortawesome/free-solid-svg-icons';
 import {keyframes} from "styled-components";
-import {SocialBtn, NewQuoteBtn, Quote, Author } from "./StyledComp";
+import {SocialBtn, NewQuoteBtn, Quote, Author} from "./StyledComp";
 
-function Box(props) {
+function QuoteBox(props) {
 
-  const htmlReadyText = (data) => {
+  const htmlLink = (data) => {
     if(data) {
       return data.replace(/\s/g, "%20");
     }
@@ -34,6 +34,7 @@ function Box(props) {
   };
 
   const {author, quote} = props.quote;
+  const {setNewQuote} = props;
 
   return(
     <div>
@@ -47,7 +48,7 @@ function Box(props) {
               theme={bgTheme}
               href={`https://twitter.com/intent/tweet?hashtags=quotes
               &related=freecodecamp
-              &text="${htmlReadyText(quote)}"%20${htmlReadyText(author)}`}
+              &text="${htmlLink(quote)}"%20${htmlLink(author)}`}
               className='social-share-btn'
               id='tweet-quote'>
               <FontAwesomeIcon size='1x' className='social-icon' icon={faTwitter} />
@@ -56,8 +57,8 @@ function Box(props) {
               theme={bgTheme}
               href={`https://www.tumblr.com/widgets/share/tool?posttype=quote
               &tags=quotes,freecodecamp
-              &caption=${htmlReadyText(author)}
-              &content=${htmlReadyText(quote)}
+              &caption=${htmlLink(author)}
+              &content=${htmlLink(quote)}
               &canonicalUrl=https%3A%2F%2Fwww.tumblr.com%2Fbuttons&shareSource=tumblr_share_button`}
               className='social-share-btn'
               id='tumbler-quote'
@@ -67,7 +68,7 @@ function Box(props) {
           </div>
           <NewQuoteBtn
             theme={bgTheme}
-            onClick={props.bgColorChange}
+            onClick={setNewQuote}
             id='new-quote'
             className='new-quote-btn'
           >
@@ -79,4 +80,4 @@ function Box(props) {
   )
 }
 
-export default Box
+export default QuoteBox

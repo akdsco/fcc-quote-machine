@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto+Slab:400,700&display=swap');
 
+body {
+  margin: 0;
+  font-family: 'Roboto Slab', sans-serif;
+}
+
 .flex {
   display: flex;
 }
@@ -96,13 +101,21 @@
 
 .credits {
   color: white;
-  font-size: 12px;
-  letter-spacing: 1.2px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.1px;
+  margin-top: 5px;
 }
 
 .credits a {
+  font-size: 12px;
   font-weight: 700;
   color: white;
+}
+
+.credits span {
+  color: red;
+  font-size: 17px;
 }
 
 .category-group {
@@ -116,18 +129,12 @@
   background: none;
   border: none;
   border-radius: 5px;
-  /*border-bottom: 3px solid grey;*/
   /*optional*/
   font-family: 'Roboto Slab', sans-serif;
   /*input has OS specific font-family*/
   cursor: pointer;
 }
 
-/*.category-button:focus {*/
-/*  outline: none;*/
-/*  border-radius: 5px;*/
-/*  border-bottom: 3px solid white;*/
-/*}*/
 
 .category-button:active {
   border-radius: 5px;
