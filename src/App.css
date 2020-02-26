@@ -19,6 +19,7 @@ body {
 
 #quote-box {
   padding: 1em 2em;
+  margin: 0 1em;
   background-color: azure;
   border-radius: 5px;
 }
@@ -158,5 +159,16 @@ body {
   100% {
     border-radius: 5px;
     border-bottom: 3px solid white;
+  }
+}
+
+@media (max-width: 400px) {
+  #text {
+    font-size: 1.5rem;
+  }
+
+  #quote-box {
+    padding: 1em 1em;
+    margin: 0 .4em;
   }
 }

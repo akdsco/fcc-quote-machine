@@ -2,9 +2,9 @@ import React, {useEffect, useState} from 'react';
 import './App.css';
 import QuoteBox from "./Components/QuoteBox";
 import {keyframes} from "styled-components";
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faHashtag} from "@fortawesome/free-solid-svg-icons";
-import {CategoryBtn, StyledDiv} from "./Components/StyledComp";
+import {StyledDiv} from "./Components/StyledComp";
+import Categories from "./Components/Categories";
+import Credits from "./Components/Credits";
 
 const randomColor = require('randomcolor');
 
@@ -50,6 +50,7 @@ function App() {
   const handleCategory = ( e, name ) => {
     e.preventDefault();
     setCategory(name);
+    name === 'wow' ? fetchWow() : fetchBreakingBad();
   };
 
   const keyFrame = keyframes`
@@ -76,44 +77,19 @@ function App() {
         theme={{color, keyFrame}}
         className="App"
       >
-        <div className='category-group'>
-          {category === 'wow' ?
-            <button className='category-button selected-button'>
-              <FontAwesomeIcon size='sm' icon={faHashtag}/>
-              words of wisdom
-            </button>
-            :
-            <CategoryBtn
-              theme={{color, borderKeyFrame}}
-              className={`category-button`}
-              onClick={e => handleCategory(e, 'wow')}
-            >
-              <FontAwesomeIcon size='sm' icon={faHashtag}/>
-              words of wisdom
-            </CategoryBtn>}
-          {category === 'breakingBad' ?
-            <button className='category-button selected-button'>
-              <FontAwesomeIcon size='sm' icon={faHashtag}/>
-              breaking bad
-            </button>
-            :
-            <CategoryBtn
-              theme={{color, borderKeyFrame}}
-              className={`category-button`}
-              onClick={e => handleCategory(e, 'breakingBad')}
-            >
-              <FontAwesomeIcon size='sm' icon={faHashtag} />
-              breaking bad
-            </CategoryBtn>
-          }
-        </div>
-        <QuoteBox
-          setNewQuote={setNewQuote}
+        <Categories
           color={color}
-          keyFrame={keyFrame}
-          quote={quote}
+          category={category}
+          borderKeyFrame={borderKeyFrame}
+          handleCategory={handleCategory}
         />
-        <p className='credits'>with <span>&hearts;</span> from <a href='http://arkadiusz.tech'>akds.tech</a></p>
+        <QuoteBox
+          color={color}
+          quote={quote}
+          keyFrame={keyFrame}
+          setNewQuote={setNewQuote}
+        />
+        <Credits />
       </StyledDiv>
   );
 }
