@@ -7,6 +7,12 @@ import {SocialBtn, NewQuoteBtn, Quote, Author} from "./StyledComp";
 
 function QuoteBox(props) {
 
+  /**
+   * @function converts string to a valid html link
+   * @param {String} data - input string to be converted
+   * @returns {string} string ready to use as a html link or empty string (if undefined is supplied)
+   */
+
   const htmlLink = (data) => {
     if(data) {
       return data.replace(/\s/g, "%20");
