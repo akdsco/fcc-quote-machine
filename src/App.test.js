@@ -1,20 +1,34 @@
 import React from 'react';
-import { render } from '@testing-library/react';
 import { shallow } from 'enzyme';
 import App from './App';
+import {findByTestAttr} from "./test/testUtils";
 
-// test('renders learn react link', () => {
-//   const { getByText } = render(<App />);
-//   const linkElement = getByText(/learn react/i);
-//   expect(linkElement).toBeInTheDocument();
-// });
-//
-// test('renders App component without crashing', () => {
-//   shallow(<App />);
-// });
-//
-// test('renders quote container with id #quote-box', () => {
-//   const app = shallow(<App />);
-//   const quoteBox = <QuoteBox id='quote-box' />;
-//   expect(app.contains(quoteBox)).toEqual(true);
-// });
+const defaultProps = {
+  quote: ''
+};
+
+const setup = (props={}) => {
+  const setupProps = {...defaultProps, ...props};
+  return shallow(<App {...setupProps} />)
+};
+describe("renders app and it's children components without errors", () => {
+  let wrapper;
+  beforeEach( () => {
+    wrapper = setup();
+  });
+
+  test('renders App without errors', () => {
+    const component = findByTestAttr(wrapper, 'component-app');
+    expect(component.length).toBe(1);
+  });
+
+  test('renders Categories without errors', () => {
+    const component = findByTestAttr(wrapper, 'component-categories');
+    expect(component.length).toBe(1);
+  });
+
+  test('renders QuoteBox without errors', () => {
+    const component = findByTestAttr(wrapper, 'component-quote-box');
+    expect(component.length).toBe(1);
+  });
+});

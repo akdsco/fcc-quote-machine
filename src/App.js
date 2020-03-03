@@ -90,18 +90,21 @@ function App() {
   `;
 
   return (
-    quote &&
+    <div data-test="component-app">
+      quote &&
       <StyledDiv
         theme={{color, keyFrame}}
         className="App"
       >
         <Categories
+          data-test="component-categories"
           color={color}
           category={category}
           borderKeyFrame={borderKeyFrame}
           handleCategory={handleCategory}
         />
         <QuoteBox
+          data-test="component-quote-box"
           color={color}
           quote={quote}
           keyFrame={keyFrame}
@@ -109,6 +112,7 @@ function App() {
         />
         <Credits />
       </StyledDiv>
+    </div>
   );
 }
 
