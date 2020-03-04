@@ -46,7 +46,7 @@ function QuoteBox(props) {
     <div>
       <div id='quote-box'>
         <Quote id='text' theme={textTheme}><FontAwesomeIcon icon={faQuoteLeft} size='sm' className='quote-icon' />{quote}</Quote>
-        <Author id='author' theme={textTheme}> - {author}</Author>
+        <Author id='author' theme={textTheme}> - {author === '' ? 'unknown' : author}</Author>
 
         <div className='control-panel flex'>
           <div className='flex'>

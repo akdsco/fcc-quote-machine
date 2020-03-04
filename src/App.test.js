@@ -4,7 +4,7 @@ import App from './App';
 import {findByTestAttr} from "./test/testUtils";
 
 const defaultProps = {
-  quote: ''
+  quote: {quote: ''}
 };
 
 const setup = (props={}) => {

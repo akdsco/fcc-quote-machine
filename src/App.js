@@ -10,7 +10,10 @@ const randomColor = require('randomcolor');
 
 function App() {
   const [color, setColor] = useState(randomColor());
-  const [quote, setQuote] = useState('');
+  const [quote, setQuote] = useState({
+    quote: "Life is simple. Stop trying to make is hard and you'll live happily.",
+    author: 'Arkadiusz'
+  });
   const [category, setCategory] = useState('wow');
 
   useEffect(() => {
@@ -19,7 +22,6 @@ function App() {
       currentColor: startingColor,
       prevColor: startingColor
     });
-    fetchWow();
   }, []);
 
   /**
@@ -91,7 +93,6 @@ function App() {
 
   return (
     <div data-test="component-app">
-      quote &&
       <StyledDiv
         theme={{color, keyFrame}}
         className="App"
