@@ -48,3 +48,13 @@ test("renders authors name if authors prop is not empty", () => {
   const component = wrapper.find('#author');
   expect(component.text()).toBe(' - Mike');
 });
+
+test('renders twitter share button', () => {
+  const component = wrapper.find('#tweet-quote');
+  expect(component.length).toBe(1);
+});
+
+test('renders tumblr share button', () => {
+  const component = wrapper.find('#tumbler-quote');
+  expect(component.length).toBe(1);
+});

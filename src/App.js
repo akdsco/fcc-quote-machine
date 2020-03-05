@@ -11,7 +11,7 @@ const randomColor = require('randomcolor');
 function App() {
   const [color, setColor] = useState(randomColor());
   const [quote, setQuote] = useState({
-    quote: "Life is simple. Stop trying to make is hard and you'll live happily.",
+    quote: "Life is simple. Stop trying to make it hard and you'll live happily.",
     author: 'Arkadiusz'
   });
   const [category, setCategory] = useState('wow');
