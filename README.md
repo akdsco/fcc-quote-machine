@@ -1,9 +1,9 @@
-## freeCodeCamp - Front-end Libraries Project - Random Quote Machine
+## Random Quote Machine - inspired by fcc challenge
 
-I set out to create a random quote machine. The technologies I'll use are:
+I set out to create a random quote machine. The technologies I used were:
 - CSS Flexbox
 - Jest - because I want to practice how to automatically test my applications
-- TDD - I will try to build using TDD mindset
 
-I will write everything here using pure JavaScript, CSS and HTML. 
-I won't rely on any additional framework other than ReactJS ecosystem.
+Written with JavaScript, React CSS and HTML.
+
+[Live App](https://quote-me.web.app/)
